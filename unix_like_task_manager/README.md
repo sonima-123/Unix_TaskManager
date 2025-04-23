@@ -85,11 +85,12 @@ DATABASE_URL=postgresql://postgres:Password@localhost:5432/unix_task_db
 
 ### 5. Create the Database
 
-Make sure the database `unix_task_db` exists in PostgreSQL. You can create it using:
+Database can create it using:
 
 ```sql
 CREATE DATABASE unix_task_db;
 ```
+(unix_task_db: eg for database name)
 
 ##  Run the Project
 
@@ -119,13 +120,16 @@ uvicorn app.main:app --reload
 ✅ Using SQL Command in pgAdmin
 1.Open pgAdmin and log in with your credentials.
 2.In the Query Editor window that opens, paste the following SQL command:
-(sql)
+```sql
 ## CREATE DATABASE unix_task_db;
+```
+(unix_task_db: eg for database name)
 ---> Configure your .env file
 DATABASE_URL=postgresql://postgres:Password@localhost:5432/databaseName
 (Replace postgres with your PostgreSQL username,Replace Password with your PostgreSQL password,Replace localhost with the host if you're using a different server,5432 is the default port for PostgreSQL, so you can leave it as is unless you have a custom port,Replace your DB Name)
 ----> you can switch to the newly created database using:
-(sql)
+```sql
 ## \c unix_task_db
+```
 This command will connect to unix_task_db and let you start working with it.
 
