@@ -52,7 +52,7 @@ unix_like_task_manager/
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/<your-username>/unix_like_task_manager.git
+git clone https://github.com/sonima-123/Unix_TaskManager.git
 cd unix_like_task_manager
 ```
 
@@ -80,7 +80,7 @@ DATABASE_PORT=5432
 DATABASE_NAME=unix_task_db
 DATABASE_USER=User_Name
 DATABASE_PASSWORD=Your_Password
-DATABASE_URL=postgresql://postgres:Password@localhost:5432/unix_task_db
+DATABASE_URL= postgresql://postgres:1234@postgres:5432/unix_task_db
 ```
 
 ### 5. Create the Database
@@ -92,7 +92,7 @@ CREATE DATABASE unix_task_db;
 ```
 (unix_task_db: eg for database name)
 
-##  Run the Project
+## 6. Run the Project
 
 ```bash
 uvicorn app.main:app --reload 
@@ -114,22 +114,17 @@ uvicorn app.main:app --reload
 | DELETE | `/tasks/{id}`      | Delete a task by ID     |
 | DELETE | `/tasks`           | Delete **all** tasks    |
 
-## Create DATABASE
----> To create a new PostgreSQL database using pgAdmin
 
-✅ Using SQL Command in pgAdmin
-1.Open pgAdmin and log in with your credentials.
-2.In the Query Editor window that opens, paste the following SQL command:
-```sql
-## CREATE DATABASE unix_task_db;
-```
-(unix_task_db: eg for database name)
----> Configure your .env file
-DATABASE_URL=postgresql://postgres:Password@localhost:5432/databaseName
-(Replace postgres with your PostgreSQL username,Replace Password with your PostgreSQL password,Replace localhost with the host if you're using a different server,5432 is the default port for PostgreSQL, so you can leave it as is unless you have a custom port,Replace your DB Name)
-----> you can switch to the newly created database using:
-```sql
-## \c unix_task_db
-```
-This command will connect to unix_task_db and let you start working with it.
+## Docker  Steps: 
 
+ 1. Build the application docker image:
+```
+    cd unix_like_task_manager 
+```
+```
+    docker compose build 
+```
+2.  Start the dockers
+```
+docker compose up -d
+```
