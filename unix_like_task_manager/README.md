@@ -112,3 +112,20 @@ uvicorn app.main:app --reload
 | PUT    | `/tasks/{id}`      | Update a task by ID     |
 | DELETE | `/tasks/{id}`      | Delete a task by ID     |
 | DELETE | `/tasks`           | Delete **all** tasks    |
+
+## Create DATABASE
+---> To create a new PostgreSQL database using pgAdmin
+
+✅ Using SQL Command in pgAdmin
+1.Open pgAdmin and log in with your credentials.
+2.In the Query Editor window that opens, paste the following SQL command:
+(sql)
+## CREATE DATABASE unix_task_db;
+---> Configure your .env file
+DATABASE_URL=postgresql://postgres:Password@localhost:5432/databaseName
+(Replace postgres with your PostgreSQL username,Replace Password with your PostgreSQL password,Replace localhost with the host if you're using a different server,5432 is the default port for PostgreSQL, so you can leave it as is unless you have a custom port,Replace your DB Name)
+----> you can switch to the newly created database using:
+(sql)
+## \c unix_task_db
+This command will connect to unix_task_db and let you start working with it.
+
